@@ -1,0 +1,311 @@
+/* Variables */
+:root {
+    --grid-color: rgba(0, 150, 200, 0.1);
+    --grid-size: 40px;
+    --text-color: #000;
+    --bg-color: #fff;
+    --accent-color: #B687F7;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: #fff;
+    overflow-x: hidden;
+}
+
+/* Grid Background */
+.grid-bg {
+    background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+        linear-gradient(var(--grid-color) 0.5px, transparent 0.5px),
+        linear-gradient(90deg, var(--grid-color) 0.5px, transparent 0.5px);
+    background-size: var(--grid-size) var(--grid-size), 
+                     var(--grid-size) var(--grid-size), 
+                     calc(var(--grid-size)/2) calc(var(--grid-size)/2), 
+                     calc(var(--grid-size)/2) calc(var(--grid-size)/2);
+    background-position: -1px -1px;
+}
+
+/* Header and Navigation */
+header {
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* Section Styling */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 5%;
+    overflow: hidden;
+}
+
+/* Animations pour les éléments géométriques */
+@keyframes float {
+    0% { transform: rotate(45deg) translate(0, 0); }
+    50% { transform: rotate(45deg) translate(10px, 10px); }
+    100% { transform: rotate(45deg) translate(0, 0); }
+}
+
+.triangle-overlay {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-color: rgba(200, 200, 200, 0.2);
+    transform: rotate(45deg); /* Rotation pour créer un effet losange/carré incliné */
+    z-index: -1;
+    animation: float 15s ease-in-out infinite;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Variation des temps d'animation */
+section:nth-child(2n) .triangle-overlay {
+    animation-duration: 20s;
+}
+
+/* Positions différentes pour chaque section */
+#hero .triangle-overlay {
+    top: 50px;
+    right: 150px;
+}
+
+#twist .triangle-overlay {
+    bottom: 100px;
+    left: 100px;
+}
+
+#think .triangle-overlay {
+    top: 150px;
+    right: 100px;
+}
+
+#redefine .triangle-overlay {
+    bottom: 200px;
+    left: 150px;
+}
+
+#faq .triangle-overlay {
+    top: 120px;
+    right: 200px;
+}
+
+/* Typography */
+h1 {
+    font-size: 5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    letter-spacing: 1px;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.discover-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: rgba(200, 200, 200, 0.5);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.discover-btn:hover {
+    background-color: rgba(200, 200, 200, 0.7);
+}
+
+.steam-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.steam-icon img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Placeholder Areas */
+.placeholder {
+    background-color: rgba(200, 200, 200, 0.3);
+    width: 80%;
+    max-width: 500px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.demo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.demo-placeholder {
+    width: 45%;
+    min-width: 280px;
+    height: 250px;
+    background-color: rgba(200, 200, 200, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #555;
+    border-radius: 10px;
+}
+
+/* Cube Icon */
+.rubik-icon {
+    width: 250px; /* Logo beaucoup plus grand */
+    height: 250px;
+    margin-bottom: -20px; /* Marge négative pour rapprocher le titre */
+    object-fit: contain; /* Maintenir les proportions */
+}
+
+/* FAQ Section */
+.faq-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Crée deux colonnes, 2/3 et 1/3 */
+    grid-gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.faq-content {
+    grid-column: 1; /* Première colonne */
+}
+
+.faq-question {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.faq-answer {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.faq-list {
+    grid-column: 2; /* Deuxième colonne */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    align-self: start;
+}
+
+.faq-list-item {
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    font-size: 0.8rem;
+    text-align: right;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    .triangle-overlay {
+        width: 50%;
+    }
+    
+    .demo-placeholder {
+        width: 90%;
+    }
+    
+    .faq-container {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        grid-gap: 15px;
+    }
+    
+    .faq-list {
+        grid-column: 1; /* Première colonne */
+        margin-top: 20px;
+    }
+}
