@@ -186,7 +186,7 @@ h2 {
     height: 16px;
 }
 
-.media {
+video.media {
     display: flex;
     align-items: center;
     justify-content: center;
