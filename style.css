@@ -186,6 +186,13 @@ h2 {
     height: 16px;
 }
 
+.media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
 /* Placeholder Areas */
 .placeholder {
     background-color: rgba(200, 200, 200, 0.3);
@@ -202,12 +209,7 @@ h2 {
     border-radius: 10px;
 }
 
-.media {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-}
+
 
 .demo-container {
     display: flex;
