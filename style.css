@@ -193,6 +193,13 @@ video.media {
     border-radius: 10px;
 }
 
+img.media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
 /* Placeholder Areas */
 .placeholder {
     background-color: rgba(200, 200, 200, 0.3);
@@ -224,13 +231,13 @@ video.media {
     width: 45%;
     min-width: 280px;
     height: 250px;
-    background-color: rgba(200, 200, 200, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
     font-style: italic;
     color: #555;
     border-radius: 10px;
+    margin-block: 10px;
 }
 
 /* Cube Icon */
